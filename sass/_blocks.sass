@@ -133,32 +133,6 @@
 /* ---------------------------------------END--- */
 
 
-/* columns
-/* --------------------------------------------- */
-
-.columns
-	display: table
-	width: 100%
-
-	&__i
-		width: 50%
-		display: table-cell
-		vertical-align: top
-		padding-right: 10px
-
-		&_first
-			padding-right: 30px
-
-		&_second
-			padding-left: 30px
-
-
-
-/* columns
-/* ---------------------------------------END--- */
-
-
-
 
 /* txt-light
 /* --------------------------------------------- */
@@ -170,63 +144,6 @@
 /* txt-light
 /* ---------------------------------------END--- */
 
-
-/* icon-h
-/* --------------------------------------------- */
-
-.icon-h
-	position: relative
-	border: 1px solid #c4c4c4
-	border-left: none
-	border-right: none
-	padding: 40px 0 34px 0
-	margin-bottom: 58px
-
-	&:before,
-	&:after
-		content: ''
-		display: block
-		position: absolute
-
-	&_licence
-		&:before
-			background: #fff
-			left: 50%
-			bottom: 100%
-			margin-bottom: -18px
-			margin-left: - image-width( sprite-path("licence") ) / 2 - 10
-			width: image-width( sprite-path("licence") ) + 20
-			height: image-height( sprite-path("licence") ) 
-
-		&:after
-			+sprite-icon("licence")
-			left: 50%
-			margin-left: - image-width( sprite-path("licence") ) / 2
-			bottom: 100%
-			margin-bottom: -18px
-
-
-	&_medicine
-		&:before
-			background: #fff
-			left: 50%
-			bottom: 100%
-			margin-bottom: -15px
-			margin-left: - image-width( sprite-path("medicine") ) / 2 - 10
-			width: image-width( sprite-path("medicine") ) + 20
-			height: image-height( sprite-path("medicine") ) 
-
-		&:after
-			+sprite-icon("medicine")
-			left: 50%
-			margin-left: - image-width( sprite-path("medicine") ) / 2
-			bottom: 100%
-			margin-bottom: -15px
-		
-		
-
-/* icon-h
-/* ---------------------------------------END--- */
 
 
 /* txt-center
@@ -283,7 +200,7 @@
 /* --------------------------------------------- */
 
 .map
-	display: none
+	//display: none
 	height: 505px
 	background: #d0cfcf
 
@@ -520,4 +437,262 @@
 			background: $main_color !important
 
 /* slider
+/* ---------------------------------------END--- */
+
+
+/* inside
+/* --------------------------------------------- */
+
+.inside
+	padding-bottom: 50px
+	margin-bottom: 26px
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		display: table
+		width: 100%
+		
+	&__i
+		line-height: 1.3
+		width: (100%/3)
+		position: relative
+		margin: 0
+		padding: 98px 25px 0 25px
+		text-align: center
+		display: table-cell
+		vertical-align: top
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 3px
+			left: 50%
+			background: red
+
+		&_location
+			
+		&_kitchen
+
+		&_interior
+
+
+	&__icon
+		position: absolute
+		top: 0
+		left: 50%
+		&_location
+			top: -7px
+			width: 54px
+			height: 81px
+			margin-left: - (54px/2)
+
+		&_kitchen
+			width: 81px
+			height: 71px
+			margin-left: - (81px/2)
+
+		&_interior
+			width: 91px
+			height: 70px
+			margin-left: - (91px/2)
+
+	&__h
+		+rem(font-size, 24px)
+
+
+/* inside
+/* ---------------------------------------END--- */
+
+
+/* section-h
+/* --------------------------------------------- */
+
+.section-h
+	+rem(font-size, 40px)
+	margin-bottom: 50px
+	margin-top: 60px
+	font-weight: normal
+	color: $main_color2_dark
+
+/* section-h
+/* ---------------------------------------END--- */
+
+
+/* separator
+/* --------------------------------------------- */
+
+.separator
+	height: 13px
+	background: url("../img/separator.png") center 0 no-repeat
+
+/* separator
+/* ---------------------------------------END--- */
+
+
+
+/* food-steps
+/* --------------------------------------------- */
+
+.food-steps
+	margin-bottom: 106px
+	overflow: hidden
+	padding-bottom: 10px
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		display: table
+		width: 100%
+		
+	&__i
+		position: relative
+		margin: 0
+		padding: 222px 0 0 0
+		display: table-cell
+		vertical-align: top
+		text-align: center
+		background: url("../img/dash.gif") 0 bottom repeat-x
+		@extend %bszbb
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 10px
+			left: 50%
+
+		&_1
+			padding-left: 90px
+			text-align: left
+			&:before
+				top: 34px
+				+sprite-icon("farm")
+				margin-left: - image-width( sprite-path("farm") )/2 - 11
+
+		&_2
+			padding-left: 30px
+			&:before
+				top: 33px
+				+sprite-icon("kitchen")
+				margin-left: - image-width( sprite-path("kitchen") )/2 + 12
+
+		&_3
+			text-align: right
+			padding-right: 15px
+			&:before
+				top: 6px
+				+sprite-icon("dish")
+				margin-left: - image-width( sprite-path("dish") )/2 + 18
+
+
+	&__h
+		@extend %font-lobster
+		position: relative
+		top: 19px
+		+rem(font-size, 30px)
+		display: inline-block
+		padding: 0 20px
+		background: #fff
+		color: $main_color
+	
+	&__i:first-child &__h:after,
+	&__i:last-child &__h:after
+		content: ''
+		display: block
+		position: absolute
+		bottom: 0
+		width: $big-number
+		height: 20px
+		background: #fff
+
+	&__i:first-child &__h
+		&:after
+			left: -$big-number
+
+	&__i:last-child &__h
+		&:after
+			right: -$big-number
+
+
+/* food-steps
+/* ---------------------------------------END--- */
+
+
+/* message-section
+/* --------------------------------------------- */
+
+.message-section
+	background: #f8e07e
+	color: $main_color
+	@extend %font-lobster
+	+rem(font-size, 30px)
+	text-align: center
+	
+
+	&__body
+		@extend %center
+		padding: 32px 0
+		
+
+/* message-section
+/* ---------------------------------------END--- */
+
+
+/* meals
+/* --------------------------------------------- */
+
+.meals
+
+	&__i
+		@extend %font-lobster
+		+rem(font-size, 30px)
+		@extend %bszbb
+		line-height: 1.2
+		color: $main_color
+		position: relative
+
+		&:before,
+		&:after
+			content: ''
+			display: block
+			position: absolute
+
+		&_breakfast
+			padding-top: 77px
+			padding-bottom: 140px
+			padding-left: 569px
+			&:before
+				top: -66px
+				left: 3px
+				+sprite-icon("breakfast")
+			&:after
+				top: 241px
+				left: 327px
+				+sprite-icon("arrow-right")
+
+		&_dinner
+			padding-top: 112px
+			padding-bottom: 140px
+			padding-left: 74px
+			&:before
+				top: -37px
+				right: -18px
+				+sprite-icon("dinner")
+			&:after
+				top: 195px
+				left: 320px
+				+sprite-icon("arrow-bottom")
+
+		&_supper
+			padding-top: 137px
+			padding-bottom: 150px
+			padding-left: 570px
+			&:before
+				top: 68px
+				left: 34px
+				+sprite-icon("supper")
+
+/* meals
 /* ---------------------------------------END--- */

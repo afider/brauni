@@ -15,4 +15,21 @@
 
 		});
 
+
+		$(".js-goto").click(function(e) {
+
+			var self = $(this),
+				targetClass = self.data('goto');
+			    target = $(targetClass);
+
+			var speed = 2000;
+
+			 e.preventDefault();
+
+		    $('html, body').animate({
+		        scrollTop: target.offset().top
+		        
+		    }, speed, 'easeInOutCubic');
+		});
+
 	});
