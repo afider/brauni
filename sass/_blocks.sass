@@ -1,0 +1,523 @@
+%bszbb
+	@include box-sizing(border-box)
+
+
+
+
+/* clearfix
+/* --------------------------------------------- */
+
+
+%clear
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+.clearfix-block
+	clear: both
+	overflow: hidden
+	margin: 0
+	padding: 0
+	font-size: 0
+	line-height: 0
+
+.clearfix 
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+
+/* clearfix
+/* ---------------------------------------END--- */
+
+%center
+	width: $page_w
+	margin: auto
+
+
+/* centered
+/* --------------------------------------------- */
+
+.centered
+	margin: auto
+	min-width: $page_w
+	max-width: $page_w_max
+	padding-left: 40px
+	padding-right: 40px
+	+box-sizing(border-box)
+
+/* centered
+/* ---------------------------------------END--- */
+
+
+/* page
+/* --------------------------------------------- */
+
+.page
+	min-width: $page_w_min
+	&__header
+		//background: #adf785
+
+	&__body
+		@extend %center
+
+	&__footer
+		position: relative
+		//background: #f1acf2
+
+	
+/* page
+/* ---------------------------------------END--- */
+
+
+/* header
+/* --------------------------------------------- */
+
+.header
+	$height: 192px
+
+	position: relative
+	height: $height
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		right: 0
+		bottom: -7px
+		height: 7px
+		left: 0
+		background: url("../img/zigzag.png") 0 0 repeat-x
+		z-index: 100
+
+	&__body
+		position: relative
+		@extend %center
+		
+	&__in
+		position: relative
+		height: $height
+		@extend %bszbb
+
+	&__message
+		position: absolute
+		right: 0
+		top: 65px
+
+	&__inf
+		position: absolute
+		left: 6px
+		top: 63px
+
+
+/* header
+/* ---------------------------------------END--- */
+
+
+/* made-by
+/* --------------------------------------------- */
+
+.made-by
+	a
+		+link-color ($color_visited: none)
+
+/* made-by
+/* ---------------------------------------END--- */
+
+
+/* columns
+/* --------------------------------------------- */
+
+.columns
+	display: table
+	width: 100%
+
+	&__i
+		width: 50%
+		display: table-cell
+		vertical-align: top
+		padding-right: 10px
+
+		&_first
+			padding-right: 30px
+
+		&_second
+			padding-left: 30px
+
+
+
+/* columns
+/* ---------------------------------------END--- */
+
+
+
+
+/* txt-light
+/* --------------------------------------------- */
+
+.txt-light
+	font-style: italic
+	color: $text_color_light2
+
+/* txt-light
+/* ---------------------------------------END--- */
+
+
+/* icon-h
+/* --------------------------------------------- */
+
+.icon-h
+	position: relative
+	border: 1px solid #c4c4c4
+	border-left: none
+	border-right: none
+	padding: 40px 0 34px 0
+	margin-bottom: 58px
+
+	&:before,
+	&:after
+		content: ''
+		display: block
+		position: absolute
+
+	&_licence
+		&:before
+			background: #fff
+			left: 50%
+			bottom: 100%
+			margin-bottom: -18px
+			margin-left: - image-width( sprite-path("licence") ) / 2 - 10
+			width: image-width( sprite-path("licence") ) + 20
+			height: image-height( sprite-path("licence") ) 
+
+		&:after
+			+sprite-icon("licence")
+			left: 50%
+			margin-left: - image-width( sprite-path("licence") ) / 2
+			bottom: 100%
+			margin-bottom: -18px
+
+
+	&_medicine
+		&:before
+			background: #fff
+			left: 50%
+			bottom: 100%
+			margin-bottom: -15px
+			margin-left: - image-width( sprite-path("medicine") ) / 2 - 10
+			width: image-width( sprite-path("medicine") ) + 20
+			height: image-height( sprite-path("medicine") ) 
+
+		&:after
+			+sprite-icon("medicine")
+			left: 50%
+			margin-left: - image-width( sprite-path("medicine") ) / 2
+			bottom: 100%
+			margin-bottom: -15px
+		
+		
+
+/* icon-h
+/* ---------------------------------------END--- */
+
+
+/* txt-center
+/* --------------------------------------------- */
+
+.txt-center
+	text-align: center
+
+/* txt-center
+/* ---------------------------------------END--- */
+
+
+/* footer
+/* --------------------------------------------- */
+
+.footer
+	&__body
+		@extend %center
+		display: table
+
+	&__i
+		height: 68px
+		display: table-cell
+		vertical-align: middle
+		&_made-by
+			
+
+/* footer
+/* ---------------------------------------END--- */
+
+
+/* counters
+/* --------------------------------------------- */
+
+.counters
+	position: relative
+	top: 5px
+	display: inline-block
+	vertical-align: middle
+	a
+		border-bottom: none
+		display: block
+	&__i
+		display: inline-block
+		margin-right: 10px
+	img
+		display: block
+
+/* counters
+/* ---------------------------------------END--- */
+
+
+/* map
+/* --------------------------------------------- */
+
+.map
+	display: none
+	height: 505px
+	background: #d0cfcf
+
+/* map
+/* ---------------------------------------END--- */
+
+
+/* logo
+/* --------------------------------------------- */
+
+.logo
+	$logo_w: 250px
+	$logo_h: 123px
+
+	display: block
+	position: absolute
+	width: $logo_w
+	height: $logo_h
+	border-bottom: none
+	top: 38px
+	left: 50%
+	margin-left: - $logo_w/2
+
+	&__svg
+		width: $logo_w
+		height: $logo_h
+
+	
+/* logo
+/* ---------------------------------------END--- */
+
+
+/* table
+/* --------------------------------------------- */
+
+.table 
+	margin-bottom: 20px
+	width: 100%
+	border: 2px solid #e9ecee
+
+	&__h td,
+	& th 
+		font-size: 13px
+		font-weight: bold
+		color: #888
+		background: #e9ecee
+
+	& th,
+	& td
+		padding: 10px 14px
+		border-bottom: 1px solid #e9ecee
+
+	&__line
+		background: #f6f6f6
+
+	
+/* table
+/* ---------------------------------------END--- */
+
+
+
+/* top
+/* --------------------------------------------- */
+
+.top
+	background: $main_color_dark
+	text-transform: uppercase
+
+	&__body
+		@extend %center
+		@extend %clear
+	
+	& &__i
+		width: (100%/3)
+		display: block
+		float: left
+		text-align: center
+		height: 55px
+		line-height: 55px
+		text-decoration: none
+		color: #fff
+		border-left: 1px solid #685650
+		@extend %bszbb
+		+transition-property(background)
+		+transition-duration($animation-time)
+		+rem(font-size, 13px)
+
+		&:first-child
+			border-left: none
+		&:hover
+			background: $main_color
+			+transition-duration($animation-time_fast)
+
+
+/* top
+/* ---------------------------------------END--- */
+
+
+/* message
+/* --------------------------------------------- */
+
+.message
+	@extend %font-lobster
+	color: $main_color
+	line-height: 1.4
+
+	&__big
+		+rem(font-size, 29px)
+		
+	&__small
+		+rem(font-size, 18px)
+
+/* message
+/* ---------------------------------------END--- */
+
+
+/* inf
+/* --------------------------------------------- */
+
+.inf
+	@extend %font-lobster
+	color: $main_color
+	line-height: 1.4
+	&__icon
+		&_phone
+			width: 10px
+			height: 19px
+			margin-right: 11px
+		&_location
+			position: relative
+			top: 5px
+			width: 13px
+			height: 21px
+			margin-right: 11px
+
+	&__phone
+		+rem(font-size, 29px)
+		margin-bottom: 1px
+		
+	&__address
+		+rem(font-size, 18px)
+
+	&__a
+		+link-color ($color_visited: none)
+		border-bottom-style: dotted
+
+/* inf
+/* ---------------------------------------END--- */
+
+
+/* svg-icons
+/* --------------------------------------------- */
+
+#svg-icons
+	position: absolute
+	top: 0
+	left: 0
+	height: 0
+	width: 0
+	z-index: -100
+
+
+/* svg-icons
+/* ---------------------------------------END--- */
+
+
+/* slider
+/* --------------------------------------------- */
+
+.slider
+	margin-bottom: 22px
+	max-width: $page_w_max
+	margin: auto
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0
+		padding: 0
+		position: relative
+		
+	&__img
+		display: block
+		max-width: 100%
+		height: auto
+	
+	.bx-wrapper .bx-prev,
+	.bx-wrapper .bx-next
+		display: none
+
+	.bx-wrapper .bx-controls
+		
+	.bx-wrapper .bx-pager
+		text-align: center
+		width: 100%
+		position: absolute
+		top: 100%
+		margin-top: -69px
+		left: 0
+		right: 0
+		height: 69px
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			background: #feffc0
+			+opacity(.54)
+		
+		.bx-pager-item
+			position: relative
+			top: 20px
+
+		.bx-pager-link
+			@extend %bszbb
+			width: 27px
+			height: 28px
+			margin: 0 10px
+			border-radius: 50%
+			border: 2px solid $main_color
+			background: none
+			+transition-property(background)
+			+transition-duration($animation-time)
+
+		.active,
+		.bx-pager-link:hover
+			background: $main_color !important
+
+/* slider
+/* ---------------------------------------END--- */
