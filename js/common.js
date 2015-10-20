@@ -8,8 +8,8 @@
 			minSlides: 1,
 			maxSlides: 1,
 			slideMargin: 0,
-			auto: false,
-			pause: 3000,
+			auto: true,
+			pause: 5000,
 			speed: 1000,
 			autoHover: true
 
